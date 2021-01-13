@@ -1,0 +1,19 @@
+version: '3'
+services:
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./data/redis:/data
+    restart: always
+  postgres:
+    image: postgres:10-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: 'pguser'
+      POSTGRES_PASSWORD: 'pgpass'
+      POSTGRES_DB: 'test'
+    volumes:
+     - ./data/postgres:/var/lib/postgresql/data
