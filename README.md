@@ -1,17 +1,31 @@
 # db
- Local databases in docker for quck testing
+Start app in docker for quck testing
 
 
-## redis
+## Start containers
+
+## Container types
+- redis
+- postgres
+- nginx
+
+## Commands
 ```shell
-docker-compose up -d redis
+# start one
+docker-compose up -d ${CONTAINER_TYPE}
 
-docker-compose stop redis
-```
+# stop one
+docker-compose stop ${CONTAINER_TYPE}
 
-## postgres
-```shell
-docker-compose up -d postgres
+# start all
+docker-compose up -d
 
-docker-compose stop postgres
+# stop all
+docker-compose stop
+
+# remove all
+docker-compose down
+
+# list
+docker-compose ps
 ```
