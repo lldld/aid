@@ -1,2 +1,4 @@
 
-data/**
+mysql/data/**
+postgres/data/**
+redis/data/**
