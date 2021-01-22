@@ -2,5 +2,5 @@
 mysql/data/**
 postgres/data/**
 redis/data/**
-nginx/data/html/qa/**
-php/html/qa/**
+nginx/data/html/qa/
+php/html/qa/
