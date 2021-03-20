@@ -21,15 +21,15 @@ services:
      - ./postgres/data/postgres:/var/lib/postgresql/data
 
   mysql:
-    image: mysql:8
+    image: mysql:5.7
     ports:
       - "3306:3306"
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: 'mysqlpass'
-      MYSQL_USER: 'mysqluser'
-      MYSQL_PASSWORD: 'mysqlpass'
-      MYSQL_DATABASE: 'test'
+      MYSQL_ROOT_PASSWORD: 'qa_pass'
+      MYSQL_USER: 'qa_user'
+      MYSQL_PASSWORD: 'qa_pass'
+      MYSQL_DATABASE: 'qa'
     volumes:
       - ./mysql/data:/var/lib/mysql
   
@@ -45,7 +45,7 @@ services:
       - "8081:80"
     volumes:
       - ./nginx/conf:/etc/nginx
-      - ./nginx/data:/usr/share/nginx
+      - ./nginx/html:/var/www/html
 
   php:
     build: ./php
@@ -53,6 +53,9 @@ services:
         - "9000:9000"
     volumes:
         - "./php/html:/var/www/html"
+
+  sbt:
+    image: warriortrading/mvn_jdk11_compiler:DEV-9
 
   
 

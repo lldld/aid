@@ -3,4 +3,7 @@ mysql/data/**
 postgres/data/**
 redis/data/**
 nginx/data/html/qa/
-php/html/qa/
+php/**
+php/html-old/**
+nginx/html/**
+nginx/data/**
